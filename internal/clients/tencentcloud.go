@@ -31,13 +31,14 @@ import (
 )
 
 const (
-	keyUsername = "username"
-	keyPassword = "password"
-	keyHost     = "host"
+	keySecretId  = "secret_id"
+	keySecretKey = "secret_key"
+	keyRegion    = "region"
 
 	// TencentCloud credentials environment variable names
-	envUsername = "HASHICUPS_USERNAME"
-	envPassword = "HASHICUPS_PASSWORD"
+	envSecretId  = "TENCENTCLOUD_SECRET_ID"
+	envSecretKey = "TENCENTCLOUD_SECRET_KEY"
+	envRegion    = "TENCENTCLOUD_REGION"
 )
 
 const (
@@ -88,12 +89,15 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 
 		// set provider configuration
 		ps.Configuration = map[string]interface{}{
-			"host": tencentcloudCreds[keyHost],
+			"secret_id":  tencentcloudCreds[keySecretId],
+			"secret_key": tencentcloudCreds[keySecretKey],
+			"region":     tencentcloudCreds[keyRegion],
 		}
 		// set environment variables for sensitive provider configuration
 		ps.Env = []string{
-			fmt.Sprintf(fmtEnvVar, envUsername, tencentcloudCreds[keyUsername]),
-			fmt.Sprintf(fmtEnvVar, envPassword, tencentcloudCreds[keyPassword]),
+			fmt.Sprintf(fmtEnvVar, envSecretId, tencentcloudCreds[keySecretId]),
+			fmt.Sprintf(fmtEnvVar, envSecretKey, tencentcloudCreds[keySecretKey]),
+			fmt.Sprintf(fmtEnvVar, envRegion, tencentcloudCreds[keyRegion]),
 		}
 		return ps, nil
 	}
