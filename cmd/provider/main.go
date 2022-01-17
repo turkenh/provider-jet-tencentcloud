@@ -17,6 +17,7 @@ limitations under the License.
 package main
 
 import (
+	"github.com/crossplane-contrib/terrajet/pkg/types/conversion"
 	"os"
 	"path/filepath"
 
@@ -71,6 +72,7 @@ func main() {
 
 	rl := ratelimiter.NewGlobal(ratelimiter.DefaultGlobalRPS)
 	kingpin.FatalIfError(apis.AddToScheme(mgr.GetScheme()), "Cannot add TencentCloud APIs to scheme")
-	kingpin.FatalIfError(controller.Setup(mgr, log, rl, setup, ws, pconfig.GetProvider(tf.Provider().ResourcesMap), 1), "Cannot setup TencentCloud controllers")
+	resourceMap := conversion.GetV2ResourceMap(tf.Provider())
+	kingpin.FatalIfError(controller.Setup(mgr, log, rl, setup, ws, pconfig.GetProvider(resourceMap), 1), "Cannot setup TencentCloud controllers")
 	kingpin.FatalIfError(mgr.Start(ctrl.SetupSignalHandler()), "Cannot start controller manager")
 }

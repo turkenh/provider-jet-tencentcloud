@@ -19,4 +19,4 @@ require (
 
 // Comment out the line below instead of the above, if your Terraform provider
 // uses an old version (<v2) of github.com/hashicorp/terraform-plugin-sdk.
-// replace github.com/hashicorp/terraform-plugin-sdk => github.com/turkenh/terraform-plugin-sdk v1.17.2-patch1
+replace github.com/hashicorp/terraform-plugin-sdk => github.com/turkenh/terraform-plugin-sdk v1.17.2-patch1
