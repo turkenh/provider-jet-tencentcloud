@@ -22,8 +22,8 @@ import (
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "tencentcloud"
+	modulePath     = "github.com/crossplane-contrib/provider-jet-tencentcloud"
 )
 
 // GetProvider returns provider configuration
