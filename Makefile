@@ -5,10 +5,10 @@ PROJECT_NAME := provider-jet-tencentcloud
 PROJECT_REPO := github.com/crossplane-contrib/$(PROJECT_NAME)
 
 export TERRAFORM_VERSION := 1.0.11
-export TERRAFORM_PROVIDER_SOURCE := hashicorp/hashicups
-export TERRAFORM_PROVIDER_VERSION := 0.3.2
-export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-hashicups
-export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://github.com/hashicorp/terraform-provider-hashicups/releases/download/v0.3.2
+export TERRAFORM_PROVIDER_SOURCE := tencentcloudstack/tencentcloud
+export TERRAFORM_PROVIDER_VERSION := 1.61.1
+export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-tencentcloud
+export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://releases.hashicorp.com/terraform-provider-tencentcloud/1.61.1
 
 PLATFORMS ?= linux_amd64 linux_arm64
 
