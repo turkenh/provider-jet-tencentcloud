@@ -19,6 +19,8 @@ package config
 import (
 	tjconfig "github.com/crossplane-contrib/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+
+	"github.com/crossplane-contrib/provider-jet-tencentcloud/config/vpc"
 )
 
 const (
@@ -36,10 +38,13 @@ func GetProvider(resourceMap map[string]*schema.Resource) *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProvider(resourceMap, resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn))
+		tjconfig.WithDefaultResourceFn(defaultResourceFn),
+		tjconfig.WithIncludeList([]string{
+			"tencentcloud_vpc$",
+		}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
-		// add custom config functions
+		vpc.Customize,
 	} {
 		configure(pc)
 	}
