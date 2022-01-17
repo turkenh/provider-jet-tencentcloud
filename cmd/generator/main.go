@@ -41,7 +41,7 @@ func main() {
 	if err != nil {
 		panic(fmt.Sprintf("cannot calculate the absolute path of %s", os.Args[1]))
 	}
-	resourceMap := tf.Provider().ResourcesMap
+	//resourceMap := tf.Provider().ResourcesMap
 	// Comment out the line below instead of the above, if your Terraform
 	// provider uses an old version (<v2) of github.com/hashicorp/terraform-plugin-sdk.
 	resourceMap := conversion.GetV2ResourceMap(tf.Provider())
