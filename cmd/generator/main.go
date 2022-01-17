@@ -23,7 +23,7 @@ import (
 	"os"
 	"path/filepath"
 
-	tf "github.com/hashicorp/terraform-provider-hashicups/hashicups"
+	tf "github.com/tencentcloudstack/terraform-provider-tencentcloud/tencentcloud"
 
 	"github.com/crossplane-contrib/terrajet/pkg/pipeline"
 	// Comment out the line below instead of the above, if your Terraform
