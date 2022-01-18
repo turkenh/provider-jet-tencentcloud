@@ -17,11 +17,11 @@ limitations under the License.
 package main
 
 import (
-	"github.com/crossplane-contrib/terrajet/pkg/types/conversion"
 	"os"
 	"path/filepath"
 
-	"github.com/crossplane-contrib/terrajet/pkg/terraform"
+	"github.com/crossplane/terrajet/pkg/terraform"
+	"github.com/crossplane/terrajet/pkg/types/conversion"
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/pkg/ratelimiter"
 	tf "github.com/tencentcloudstack/terraform-provider-tencentcloud/tencentcloud"

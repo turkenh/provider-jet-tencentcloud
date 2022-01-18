@@ -25,10 +25,10 @@ import (
 
 	tf "github.com/tencentcloudstack/terraform-provider-tencentcloud/tencentcloud"
 
-	"github.com/crossplane-contrib/terrajet/pkg/pipeline"
+	"github.com/crossplane/terrajet/pkg/pipeline"
 	// Comment out the line below instead of the above, if your Terraform
 	// provider uses an old version (<v2) of github.com/hashicorp/terraform-plugin-sdk.
-	"github.com/crossplane-contrib/terrajet/pkg/types/conversion"
+	"github.com/crossplane/terrajet/pkg/types/conversion"
 
 	"github.com/crossplane-contrib/provider-jet-tencentcloud/config"
 )
